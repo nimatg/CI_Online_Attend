@@ -7,16 +7,16 @@
 
 </head>
 <body>
+
             <div id="wrapper">
         <div class="overlay"></div>
     
         <!-- Sidebar -->
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                       Home
-                    </a>
+                    <a href="<?php echo base_url();?>index.php/admin/logout">&nbsp &nbsp &nbsp logout</a>
                 </li>
                   <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Employee <span class="caret"></span></a>

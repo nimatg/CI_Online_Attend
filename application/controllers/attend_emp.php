@@ -19,6 +19,9 @@ class attend_emp extends CI_Controller {
 
 	public function attend_employee()
   {
+    if ($_POST["latt"] < 27 && $_POST["long"] > 85) {
+      echo "success";
+  
   if($_POST){
     $this->form_validation->set_rules('date', 'Attendance Date', 'required');
     $this->form_validation->set_rules('time', 'Entrance Time', 'required');
@@ -42,16 +45,15 @@ class attend_emp extends CI_Controller {
     $insert = $this->attend_model->attend_employee($attenddata);
     if ($insert)
       {
-        redirect('login_emp/attendance');	}
-        else{
-          echo "Employee is not added";
-          } 
+        redirect('login_emp/attendance');	
+         }
+       
         }
     }
-
+  }
   }
   else{
-       redirect('login_emp/attendance');
+      echo "unsussfull";
     }
 }
 public function view_notice(){

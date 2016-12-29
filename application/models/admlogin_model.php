@@ -1,15 +1,21 @@
 <?php
 
 class admlogin_model extends CI_Model {
-	function login($input) {
+	
+    function login($input) {
         $username = $input['username'];
         $password = $input['password'];
 
         $query = $this->db->query("SELECT * FROM admin_db WHERE username='$username' AND password='$password'");
         $data = $query->row();
         if (count($data) > 0) {
+             $this->session->set_userdata('name',$name);
+            $this->session->set_userdata('uid',$id);
+            $this->session->set_userdata('loggedin',true);
+            return true;
             return $data;
         } else {
+            $this->session->set_flashdata('error','Invalid username or password');
             return false;
         }
     }

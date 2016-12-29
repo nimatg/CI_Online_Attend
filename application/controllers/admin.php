@@ -4,6 +4,8 @@ class Admin extends CI_Controller {
 	public function __construct(){
 		parent:: __construct();
 		$this->load->model('admlogin_model');
+    $this->load->library('session');
+        
 	}
 
 	public function index()
@@ -42,8 +44,20 @@ class Admin extends CI_Controller {
        $this->load->view('login_emp/dashboard');
     }
 }
+function checkLogin() {
+        if ($this->session->userdata('loggedin') != true) {
+            redirect('admin/admin');
+        }
+    }
+  function logout(){
+        // session_start();
+        session_destroy();
+        $this->session->set_flashdata('error','Logged out');
+        echo"Sussfully Logged out";
+    }
 	public function dashboard()
 	{
+    $this->checkLogin();
 		$this->load->view('admin/dashboard');
 	}
 

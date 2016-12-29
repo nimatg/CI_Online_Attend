@@ -138,6 +138,28 @@
                 <input type="checkbox" name="status" value="1">Present<br>
               </div>
              </div>
+             <div class="form-group">
+         <label for="patientaddress">GPS Location</label>
+         <input type="text" class="form-control" name="latt" placeholder="Click here" onfocus="getLocation()" id="lattitude">
+         <input type="text" class="form-control" name="long" placeholder="longitude" onfocus="getLocation()" id="longitude">
+         <script>
+
+var x = document.getElementById("lattitude");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    var latt=position.coords.latitude;
+    var long= position.coords.longitude;
+    document.getElementById('lattitude').value = latt;
+    document.getElementById('longitude').value = long;
+}
+
+</script>
               <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <input type="submit" name="btnattend" class="btn btn-primary" value="Submit">
