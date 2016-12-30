@@ -18,10 +18,15 @@ class attend_emp extends CI_Controller {
 	}
 
 	public function attend_employee()
-  {
-    if ($_POST["latt"] < 27 && $_POST["long"] > 85) {
-      echo "success";
-  
+  { 
+    $max_latt=27.7449;
+    $min_latt=27.7447;
+    $max_long=85.3355;
+    $min_long=85.3353;
+    $latt =$_POST["latt"];
+    $long =$_POST["long"];
+    if ( ($latt < $max_latt && $latt > $min_latt)  && ( $long > $min_long && $long < $max_long)) {
+      // echo "success";
   if($_POST){
     $this->form_validation->set_rules('date', 'Attendance Date', 'required');
     $this->form_validation->set_rules('time', 'Entrance Time', 'required');
