@@ -18,9 +18,9 @@
 </div>
 
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row profile">
-            <div class="col-md-3 col-sm-12 col-lg-3 col-xs-12">
+            <div class="col-md-3 col-sm-12 col-xs-12 bg-color">
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle">

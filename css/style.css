@@ -450,24 +450,55 @@ html {
   color: #fff;
 }
 
+.bg-color {
+    background-color: #404040;
+    color: #fff;
+}
 
+.header{
+  text-align: center;
+}
+.profile-sidebar .nav li a{
+  color: #fff;
+}
+.profile-sidebar .nav li{
+  border-top: 1px solid #e1e1e1;
+  padding: 10px 0;
+}
+.profile-content,.profile-sidebar,.content {
+    padding: 60px 30px;
+}
 
+.profile-usermenu {
+    padding-top: 30px;
+}
 
+.profile-usertitle-name{
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.panel-title{
+  margin-top: 0;
+}
+.profile,.employee-wrapper {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  margin: 60px;
+  background-color: #fff;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.employee-wrapper .form-control{
+  background-color: #efefef;
+}
+.checkbox{
+  margin-right: 20px;
+}
+.employee-wrapper .submit-btn,.employee-wrapper .reset-btn{
+  margin-top: 30px;
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+  margin-left: 0;
+}
 
 /* SOME DEMO STYLES - NOT REQUIRED */
 body, html {background-color: @bg-color} body {h1,h2,h3,h4 {color:fadeout(@text-color, 10);}p, blockquote {color:fadeout(@text-color, 30);}a {color:fadeout(@text-color, 20);text-decoration:underline;&:hover {color:@text-color;}}}

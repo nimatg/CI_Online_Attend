@@ -4,15 +4,23 @@
         <title>Employee Dashboard</title>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/screen.css">
-<!--         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css">
- -->
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css">
+
     </head>
-    <body>
-         <nav><h3>WELCOME TO EMPLOYEE DASHBOARD</h3></nav>
+<div class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <h3 class="page-title">WELCOME TO EMPLOYEE DASHBOARD</h3>
+        </div>
+      </div>
+    </div>
+</div>
+
 
     <div class="container">
-        <div class="employee-wrapper">
-            <div class="col-md-6 col-sm-12 col-lg-3 col-xs-12">
+        <div class="row employee-wrapper">
+            <div class="col-md-3 col-sm-12 col-xs-12 bg-color">
                 <div class="profile-sidebar">
                       <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle">
@@ -87,8 +95,8 @@
               </div>
             </div>
             <!-- STARTING OF ATTENDANCE FORM -->
-            <div class="col-md-6 ">
-			    <form id="addemp_form" class="form-horizontal" method="POST" action="<?php echo base_url();?>/index.php/attend_emp/attend_employee">
+            <div class="col-md-9">
+			    <form id="addemp_form" class="form-horizontal content" method="POST" action="<?php echo base_url();?>/index.php/attend_emp/attend_employee">
 			       <span class="text-danger"><?php echo form_error ('date');?></span>
 			       <span class="text-danger"><?php echo form_error ('time');?></span>
               <span class="text-danger"><?php echo form_error ('status');?></span>
@@ -97,56 +105,52 @@
 			          <h4 class="modal-title" id="myModalLabel">Attendance Section</h4>
 			       </div>
                <div class="form-group">
-              <label for="id" class="col-sm-2 control-label">ID</label>
-              <div class="col-sm-10">
+              <label for="id" class="col-sm-3 control-label">ID</label>
+              <div class="col-sm-9">
                  <input type="text" name="id" class="form-control" value="<?php echo $raw[0]['emp_id'];?>" readonly>
               </div>
            </div>
            <div class="form-group">
-              <label for="username" class="col-sm-2 control-label">Username</label>
-              <div class="col-sm-10">
+              <label for="username" class="col-sm-3 control-label">Username</label>
+              <div class="col-sm-9">
                  <input type="text" name="username" class="form-control" value="<?php echo $raw[0]['username'];?>" readonly>
               </div>
            </div>
             <div class="form-group">
-              <label for="department" class="col-sm-2 control-label">Department</label>
-              <div class="col-sm-10">
+              <label for="department" class="col-sm-3 control-label">Department</label>
+              <div class="col-sm-9">
                  <input type="text" name="department" class="form-control" value="<?php echo $raw[0]['department'];?>" readonly>
               </div>
            </div>
             <div class="form-group">
-              <label for="position" class="col-sm-2 control-label">Position</label>
-              <div class="col-sm-10">
+              <label for="position" class="col-sm-3 control-label">Position</label>
+              <div class="col-sm-9">
                  <input type="text" name="position" class="form-control" value="<?php echo $raw[0]['position'];?>" readonly>
               </div>
            </div>
            <div class="form-group">
-              <label for="date" class="col-sm-2 control-label">Attendance Date</label>
-              <div class="col-sm-10">
+              <label for="date" class="col-sm-3 control-label">Attendance Date</label>
+              <div class="col-sm-9">
                  <input type="text" name="date" class="form-control" placeholder="2000/01/01">
               </div>
            </div>
             <div class="form-group">
-              <label for="time" class="col-sm-2 control-label">Entrance Time</label>
-              <div class="col-sm-10">
+              <label for="time" class="col-sm-3 control-label">Entrance Time</label>
+              <div class="col-sm-9">
                  <input type="text" name="time" class="form-control" placeholder="time">
               </div>
            </div>
 
              <div class="form-group">
               <div class="col-sm-10">
-                <input type="checkbox" name="status" value="1">Present<br>
+                <input type="checkbox" class="checkbox" name="status" value="1">Present<br>
               </div>
              </div>
-              <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+              <div class="form-group submit-btn">
           <input type="submit" name="btnattend" class="btn btn-primary" value="Submit">
-        </div>
-     </div>
-              <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-			       <button class="btn btntn-primary" type="reset" value="Reset">Reset</button>
               </div>
+              <div class="form-group reset-btn">
+			       <button class="btn btntn-primary" type="reset" value="Reset">Reset</button>
               </div>
 			    </form>
 		</div>
