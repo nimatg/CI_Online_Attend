@@ -4,6 +4,7 @@ class attend_emp extends CI_Controller {
 	public function __construct(){
 		parent:: __construct();
 		$this->load->model('attend_model');
+    $this->load->model('admlogin_model');
 		$this->load->library('session');
         $userdata = $this->session->userdata('userdata');
         if($userdata['loggedIn']!=1)
@@ -19,14 +20,23 @@ class attend_emp extends CI_Controller {
 
 	public function attend_employee()
   { 
-    $max_latt=27.7449;
-    $min_latt=27.7447;
-    $max_long=85.3355;
-    $min_long=85.3353;
-    $latt =$_POST["latt"];
-    $long =$_POST["long"];
-    if ( ($latt < $max_latt && $latt > $min_latt)  && ( $long > $min_long && $long < $max_long)) {
-      // echo "success";
+    // $gps['gps']=$this->admlogin_model->get_gps();
+    $input = array(
+                    'latt' => $this->input->post('latt'),
+                    'long' => $this->input->post('long'),
+                );
+
+    $res = $this->admlogin_model->get_gps();
+    // $max_latt=27.7449;
+    // $min_latt=27.7447;
+    // $max_long=85.3355;
+    // $min_long=85.3353;
+
+    // $latt =$_POST["latt"];
+    // $long =$_POST["long"];
+    // if ( ($latt < $max_latt && $latt > $min_latt)  && ( $long > $min_long && $long < $max_long)) {
+    //   // echo "success";
+    if( $res = $input ){
   if($_POST){
     $this->form_validation->set_rules('date', 'Attendance Date', 'required');
     $this->form_validation->set_rules('time', 'Entrance Time', 'required');

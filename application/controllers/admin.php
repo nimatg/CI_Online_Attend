@@ -344,4 +344,18 @@ public function attendance_list(){
     $status['presents']=$this->admlogin_model->getStatus($id);
       $this->load->view('admin/detailemployee', $attendemp);
   }
+  public function insert_gps(){
+  If($_POST){
+    $data = array(
+          'latti' =>$this->input-> post('gp1'),
+          'long' =>$this->input-> post('gp2'),
+          );
+     $insert = $this->admlogin_model->gps_add($data);
+     echo "database updated";
+  }
+// public function gps_show(){
+//     $gps['show']=$this->admlogin_model->get_gps();
+//       // $this->load->view('admin/dashboard');
+//   }
+}
 }

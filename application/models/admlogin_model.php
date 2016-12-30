@@ -132,4 +132,12 @@ class admlogin_model extends CI_Model {
             $delete = $this->db->query($query);
             return $delete;
         }
+    public function gps_add($data){
+        $update = $this->db->update('gps_db', $data);
+    }
+     public function get_gps(){
+        $query= "SELECT * FROM gps_db";
+        $get =$this->db->query($query);
+        return $get->result();
+    }
 }

@@ -46,6 +46,7 @@
 
                   </ul>
                 </li>
+                
             </ul>
         </nav>
         <!-- /#sidebar-wrapper -->
@@ -77,6 +78,35 @@
     </div>
 
     <!-- /#wrapper -->
+    <hr>
+    <div class="">
+    <h3>Gps Setting</h3>
+     <form id="gps_form" class="form-horizontal" method="POST" action="<?php echo base_url();?>/index.php/admin/insert_gps">
+    <div class="form-group col-md-6">
+         <label for="patientaddress">Click the inpu field below to set the office gps location</label>
+         <input type="text" class="form-control" name="gp1" placeholder="Click here" onfocus="getLocation()" id="lattitude"> <br>
+         <input type="text" class="form-control" name="gp2" placeholder="longitude" onfocus="getLocation()" id="longitude">
+    </div>    
+<script>
+var x = document.getElementById("lattitude");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    var latt=position.coords.latitude;
+    var long= position.coords.longitude;
+    document.getElementById('lattitude').value = latt;
+    document.getElementById('longitude').value = long;
+}
+</script>
+    
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
 </body>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="<?php echo base_url();?>js/jquery.js"></script>
