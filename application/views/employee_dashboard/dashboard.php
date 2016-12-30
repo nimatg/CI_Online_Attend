@@ -2,14 +2,23 @@
 <html>
     <head>
         <title>Employee Dashboard</title>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>employee/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css">
 
     </head>
     <body>
-         <nav><h3>WELCOME TO EMPLOYEE DASHBOARD</h3></nav>
-
+<div class="header">
     <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <h3 class="page-title">WELCOME TO EMPLOYEE DASHBOARD</h3>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+    <div class="container-fluid">
         <div class="row profile">
             <div class="col-md-3 col-sm-12 col-lg-3 col-xs-12">
                 <div class="profile-sidebar">

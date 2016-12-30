@@ -3,9 +3,13 @@
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
 </head>
 <body>
-<div class="col-md-6 col-md-offset-3">
+  <div class="container">
+    <div class="row">
+<div class="col-md-12">
+  <div class="login-page">
       <span class="text-danger"><?php echo form_error ('username');?></span>
       <span class="text-danger"><?php echo form_error ('password');?></span>
     <form id="addemp_form" class="form-horizontal" method="POST" action="<?php echo base_url();?>/index.php/admin/admin_login">
@@ -29,7 +33,10 @@
       <input type="submit" name="btnsignin" class="btn btn-primary" value="Sign In">
     </div>
   </div>
+  </div>
 </div>
+    </div>
+  </div>
 </form>
 </form>
 </div>
